@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F5F2ED" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Breadshelf Goes Protein</title>
+    <meta
+      name="description"
+      content="A high-protein cookie concept for busy gym-goers and snack lovers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Nunito:wght@800&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f5f2ed;
+        --cocoa: #3d2c24;
+        --cocoa-muted: #5c4a42;
+        --taupe: #dccbbf;
+        --taupe-hover: #cdb8a8;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "DM Sans", system-ui, sans-serif;
+        background: var(--cream);
+        color: var(--cocoa);
+        -webkit-font-smoothing: antialiased;
+        padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+        padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+      }
+      .wrap {
+        max-width: 32rem;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2.5rem 0 4rem;
+      }
+      @media (min-width: 640px) {
+        .wrap {
+          padding-top: 3.5rem;
+        }
+      }
+      .eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--cocoa-muted);
+      }
+      .eyebrow span.line {
+        display: inline-block;
+        width: 2rem;
+        border-top: 1px solid rgba(92, 74, 66, 0.4);
+        vertical-align: middle;
+      }
+      h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(2.25rem, 6vw, 3rem);
+        font-weight: 600;
+        line-height: 1.15;
+        margin: 1.5rem 0 0;
+        letter-spacing: -0.02em;
+      }
+      .sub {
+        margin-top: 1.25rem;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: var(--cocoa-muted);
+        max-width: 28rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 640px) {
+        .sub {
+          font-size: 1.125rem;
+        }
+      }
+      .img-wrap {
+        margin-top: 2.5rem;
+        max-width: 28rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .vignette {
+        border-radius: 1rem;
+        overflow: hidden;
+        mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 75%);
+      }
+      .vignette img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      .tagline {
+        margin-top: 2rem;
+        max-width: 24rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.875rem;
+        font-style: italic;
+        line-height: 1.65;
+        color: var(--cocoa-muted);
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 2.5rem;
+        padding: 0.875rem 2.5rem;
+        border: none;
+        border-radius: 9999px;
+        background: var(--taupe);
+        color: var(--cocoa);
+        font-family: inherit;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 1px 2px rgba(61, 44, 36, 0.08);
+      }
+      .btn:hover {
+        background: var(--taupe-hover);
+      }
+      .btn:focus-visible {
+        outline: 2px solid rgba(61, 44, 36, 0.35);
+        outline-offset: 2px;
+      }
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .form-section {
+        margin-top: 4rem;
+        scroll-margin-top: 2rem;
+        text-align: left;
+      }
+      .form-section .eyebrow {
+        text-align: center;
+        display: block;
+      }
+      label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--cocoa-muted);
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+        border: none;
+        border-bottom: 1px solid rgba(61, 44, 36, 0.25);
+        background: transparent;
+        font-family: inherit;
+        font-size: 1rem;
+        color: var(--cocoa);
+      }
+      input:focus {
+        outline: none;
+        border-bottom-color: var(--cocoa);
+      }
+      input::placeholder {
+        color: rgba(92, 74, 66, 0.45);
+      }
+      .field {
+        margin-bottom: 1.25rem;
+      }
+      .privacy {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        color: var(--cocoa-muted);
+        margin-bottom: 1rem;
+      }
+      .err {
+        color: #7f1d1d;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+      }
+      .success-box {
+        margin-top: 2rem;
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(61, 44, 36, 0.1);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.4);
+        text-align: center;
+      }
+      .success-box h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0;
+      }
+      .success-box p {
+        margin: 0.75rem 0 0;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--cocoa-muted);
+      }
+      footer {
+        margin-top: 5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(61, 44, 36, 0.1);
+        text-align: center;
+      }
+      .logo {
+        font-family: "Nunito", "DM Sans", system-ui, sans-serif;
+        font-size: 1.875rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+      .disclaimer {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        line-height: 1.6;
+        color: var(--cocoa-muted);
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ig {
+        margin-top: 0.75rem;
+        font-size: 11px;
+        color: rgba(92, 74, 66, 0.85);
+      }
+      .ig a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-color: rgba(61, 44, 36, 0.3);
+      }
+      .config-hint {
+        margin-top: 1rem;
+        font-size: 11px;
+        color: #92400e;
+        line-height: 1.4;
+        padding: 0.75rem;
+        background: rgba(254, 243, 199, 0.5);
+        border-radius: 8px;
+        display: none;
+      }
+      .config-hint.visible {
+        display: block;
+      }
+    </style>
+    <script>
+      window.BREADSHELF_API_BASE = typeof window.BREADSHELF_API_BASE !== "undefined" ? window.BREADSHELF_API_BASE : "";
+    </script>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="eyebrow">
+        <span class="line"></span> concept preview <span class="line"></span>
+      </p>
+      <h1>Breadshelf Goes Protein</h1>
+      <p class="sub">
+        A high-protein cookie concept for busy gym-goers and snack lovers.
+      </p>
+
+      <div class="img-wrap">
+        <div class="vignette">
+          <img
+            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=85"
+            width="600"
+            height="480"
+            alt="Chocolate chip cookies"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      <p class="tagline">
+        Bakery-crafted feel, macros-minded — a cookie you could actually look forward to after a workout.
+      </p>
+
+      <button type="button" class="btn" id="cta">Join the interest list</button>
+
+      <p id="configHint" class="config-hint"></p>
+
+      <div class="form-section" id="formSection">
+        <p class="eyebrow">
+          <span class="line"></span> stay in the loop <span class="line"></span>
+        </p>
+
+        <div id="successPanel" class="success-box" hidden>
+          <h2>You’re on the list.</h2>
+          <p>
+            Thank you for joining the interest list. We’ve sent a confirmation to your inbox.
+          </p>
+        </div>
+
+        <form id="signupForm" novalidate>
+          <div class="field">
+            <label for="name">Name <span style="color: var(--cocoa)">*</span></label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              maxlength="200"
+              placeholder="Your first name"
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email <span style="color: var(--cocoa)">*</span></label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              maxlength="320"
+              placeholder="you@example.com"
+            />
+          </div>
+          <p class="privacy">
+            We collect your name and email only for this interest list and occasional follow-up about Breadshelf Goes Protein. We won’t sell your data.
+          </p>
+          <p id="formError" class="err" role="alert" hidden></p>
+          <button type="submit" class="btn" id="submitBtn">
+            Join the interest list
+          </button>
+        </form>
+      </div>
+
+      <footer>
+        <p class="logo">BreadShelf</p>
+        <p class="disclaimer">
+          Concept test only — not currently for sale.
+        </p>
+        <p class="ig">
+          <a
+            href="https://instagram.com/breadshelf.hk"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@breadshelf.hk</a
+          >
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var API_BASE = String(window.BREADSHELF_API_BASE || "").replace(/\/$/, "");
+        var trackedPageView = false;
+
+        function api(path) {
+          return API_BASE + path;
+        }
+
+        function showConfigHint(msg) {
+          var el = document.getElementById("configHint");
+          if (!el) return;
+          el.textContent = msg;
+          el.classList.add("visible");
+        }
+
+        if (window.location.protocol === "file:" && !API_BASE) {
+          showConfigHint(
+            "Opened as a local file: form and tracking need a server. Deploy to Vercel or run a local server and open /landing.html from there."
+          );
+        }
+
+        function postJSON(path, body) {
+          return fetch(api(path), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+          });
+        }
+
+        if (!trackedPageView) {
+          trackedPageView = true;
+          postJSON("/api/track", { event: "page_view" }).catch(function () {});
+        }
+
+        document.getElementById("cta").addEventListener("click", function () {
+          postJSON("/api/track", { event: "cta_click" }).catch(function () {});
+          document.getElementById("formSection").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+
+        var form = document.getElementById("signupForm");
+        var errEl = document.getElementById("formError");
+        var submitBtn = document.getElementById("submitBtn");
+        var successPanel = document.getElementById("successPanel");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          errEl.hidden = true;
+
+          var name = document.getElementById("name").value.trim();
+          var email = document.getElementById("email").value.trim();
+
+          if (!name) {
+            errEl.textContent = "Please enter your name.";
+            errEl.hidden = false;
+            return;
+          }
+
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            errEl.textContent = "Please enter a valid email address.";
+            errEl.hidden = false;
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+
+          postJSON("/api/signup", { name: name, email: email })
+            .then(function (res) {
+              return res.json().then(function (data) {
+                return { ok: res.ok, data: data };
+              });
+            })
+            .then(function (result) {
+              if (!result.ok) {
+                errEl.textContent = (result.data && result.data.error) || "Something went wrong.";
+                errEl.hidden = false;
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Join the interest list";
+                return;
+              }
+
+              form.hidden = true;
+              successPanel.hidden = false;
+            })
+            .catch(function () {
+              errEl.textContent = "Network error. Please try again.";
+              errEl.hidden = false;
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Join the interest list";
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
